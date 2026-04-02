@@ -1,0 +1,26 @@
+Header set Access-Control-Allow-Origin *
+Options +FollowSymLinks
+RewriteEngine On
+
+# Redirection of the ontology IRI to the latest version of that ontology
+#  E.g., https://w3id.org/PaN/PaNET.owl  -->
+#        https://github.com/pan-ontologies/PaNET/releases/latest/download/PaNET.owl
+RewriteRule ^$ https://github.com/Pan-ontologies/PaNET/releases/latest [R=303,L]
+
+# PaNET term IRIs are redirected to the latest documentation for that term.
+#  E.g., https://w3id.org/PaN/PaNET#PaNET2020009  -->
+#        https://pan-ontologies.github.io/PaNET/index-en.html#PaNET2020009
+RewriteRule ^(.+)$ https://pan-ontologies.github.io/PaNET/index-en.html#$1 [R=303,L]
+
+# Allow for version-specific of the ontology IRI
+#  E.g., https://w3id.org/PaN/PaNET/v1.2.0/PaNET.owl  -->
+#        https://github.com/pan-ontologies/PaNET/releases/download/v1.2.0/PaNET.owl
+RewriteRule ^v([0-9]+\.[0-9]+\.[0-9]+)\/?$ https://github.com/Pan-ontologies/PaNET/releases/tag/v$1/ [R=303,L,NC]
+
+# Redirect to the overview documentation
+#  E.g., https://w3id.org/PaN/PaNET  -->
+#        https://pan-ontologies.github.io/PaNET/index-en.html
+#  E.g., https://w3id.org/PaN/PaNET/  -->
+#        https://pan-ontologies.github.io/PaNET/index-en.html
+
+
