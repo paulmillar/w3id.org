@@ -1,10 +1,12 @@
 # PaNET
 
-Ontology of experimental techniques used in the broader PaN community.
+The Photon and Neutron Experimental Technique (PaNET) ontology
+provides a taxonomy of experimental techniques relevant for the Photon
+and Neutron (PaN) community.
 
 ## Repository
 
-[https://github.com/pan-ontologies/esrf-ontologies](https://github.com/ExPaNDS-eu/ExPaNDS-experimental-techniques-ontology)
+[https://github.com/pan-ontologies/PaNET](https://github.com/pan-ontologies/PaNET)
 
 ## Contact
 
